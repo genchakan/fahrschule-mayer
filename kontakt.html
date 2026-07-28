@@ -56,7 +56,8 @@
   .contact__info dd { font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-heading); }
   .contact__info dd a { text-decoration: none; }
   .contact__info dd a:hover { color: var(--color-primary); }
-  .contact__map { background: #0a0a0a; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden; min-height: 280px; }
+  .contact__map { background: #0a0a0a; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden; height: 280px; min-height: 280px; }
+  .contact__map iframe { display: block; width: 100%; height: 100%; }
   .contact__map a { font-size: 0.9rem; color: var(--color-primary); text-decoration: underline; }
   .badges { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
   .badge { font-size: 0.78rem; border: 1px solid var(--color-border); border-radius: var(--radius); padding: 8px 14px; color: var(--color-muted); }
@@ -176,7 +177,7 @@ m203 -163 c31 -16 56 -59 41 -72 -5 -4 -88 -20 -184 -35 -96 -15 -187 -30
         </div>
       </div>
       <div class="contact__map">
-        <iframe src="https://maps.google.com/maps?q=Heidelberger+Stra%C3%9Fe+25,+69190+Walldorf&output=embed&hl=de" width="100%" height="100%" style="border:0; min-height:280px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Fahrschule Mayer auf Google Maps"></iframe>
+        <iframe src="https://maps.google.com/maps?q=Heidelberger+Stra%C3%9Fe+25,+69190+Walldorf&output=embed&hl=de" width="100%" height="100%" style="border:0; min-height:280px;" allowfullscreen loading="eager" referrerpolicy="no-referrer-when-downgrade" title="Fahrschule Mayer auf Google Maps"></iframe>
       </div>
       <div style="grid-column: 1 / -1; text-align:center; margin-top:4px;">
         <a href="https://www.google.com/maps/dir/?api=1&destination=Heidelberger+Stra%C3%9Fe+25%2C+69190+Walldorf" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem; padding:12px 24px;">Route berechnen →</a>
