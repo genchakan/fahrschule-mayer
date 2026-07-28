@@ -44,6 +44,9 @@
   .contact__map a { font-size: 0.9rem; color: var(--color-primary); text-decoration: underline; }
   .badges { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
   .badge { font-size: 0.78rem; border: 1px solid var(--color-border); border-radius: var(--radius); padding: 8px 14px; color: var(--color-muted); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius); font-family: var(--font-heading); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; border: 2px solid transparent; text-decoration: none; }
+  .btn-outline { background: transparent; color: var(--color-primary); border-color: var(--color-primary); }
+  .btn-outline:hover { background: rgba(255,255,0,0.08); }
   @media (max-width: 800px) { .contact { grid-template-columns: 1fr; padding: 32px; } }
 
   .footer { padding: 40px 0; border-top: 1px solid var(--color-border); text-align: center; font-size: 0.8rem; color: var(--color-muted); }
@@ -158,12 +161,45 @@ m203 -163 c31 -16 56 -59 41 -72 -5 -4 -88 -20 -184 -35 -96 -15 -187 -30
       <div class="contact__map">
         <iframe src="https://maps.google.com/maps?q=Heidelberger+Stra%C3%9Fe+25,+69190+Walldorf&output=embed" width="100%" height="100%" style="border:0; min-height:280px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Fahrschule Mayer auf Google Maps"></iframe>
       </div>
-      <p style="text-align:center; margin-top:12px; font-size:0.85rem;"><a href="https://www.google.com/maps/search/?api=1&query=Heidelberger+Stra%C3%9Fe+25+69190+Walldorf" target="_blank" rel="noopener" style="color:var(--color-primary);">In Google Maps öffnen →</a></p>
+      <div style="grid-column: 1 / -1; text-align:center; margin-top:4px;">
+        <button type="button" id="directionsBtn" class="btn btn-outline" style="font-size:0.8rem; padding:12px 24px;">Route berechnen →</button>
+        <div id="iosMapChoice" style="display:none; gap:12px; justify-content:center; margin-top:14px; flex-wrap:wrap;">
+          <a id="appleMapsLink" href="#" class="btn btn-outline" style="font-size:0.8rem; padding:10px 20px;">In Apple Karten öffnen</a>
+          <a id="googleMapsLink" href="#" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem; padding:10px 20px;">In Google Maps öffnen</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <footer class="footer">© 2019–2026 Fahrschule Mayer · <a href="impressum.html" style="color:var(--color-muted);">Impressum</a> · <a href="datenschutz.html" style="color:var(--color-muted);">Datenschutz</a></footer>
+
+<script>
+(function () {
+  var destination = encodeURIComponent('Heidelberger Straße 25, 69190 Walldorf');
+  var googleUrl = 'https://www.google.com/maps/dir/?api=1&destination=' + destination;
+  var appleUrl = 'https://maps.apple.com/?daddr=' + destination;
+
+  var btn = document.getElementById('directionsBtn');
+  var choice = document.getElementById('iosMapChoice');
+  var appleLink = document.getElementById('appleMapsLink');
+  var googleLink = document.getElementById('googleMapsLink');
+  if (!btn) return;
+
+  appleLink.href = appleUrl;
+  googleLink.href = googleUrl;
+
+  var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+  btn.addEventListener('click', function () {
+    if (isIOS) {
+      choice.style.display = choice.style.display === 'flex' ? 'none' : 'flex';
+    } else {
+      window.open(googleUrl, '_blank', 'noopener');
+    }
+  });
+})();
+</script>
 
 </body>
 </html>

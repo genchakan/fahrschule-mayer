@@ -189,5 +189,34 @@ m203 -163 c31 -16 56 -59 41 -72 -5 -4 -88 -20 -184 -35 -96 -15 -187 -30
 
 <footer class="footer">© 2019–2026 Fahrschule Mayer · <a href="impressum.html" style="color:var(--color-muted);">Impressum</a> · <a href="datenschutz.html" style="color:var(--color-muted);">Datenschutz</a></footer>
 
+<script>
+(function () {
+  var form = document.querySelector('form');
+  if (!form) return;
+  var fields = form.querySelectorAll('[required]');
+  fields.forEach(function (field) {
+    field.addEventListener('invalid', function () {
+      if (field.validity.valueMissing) {
+        if (field.type === 'checkbox') {
+          field.setCustomValidity('Bitte akzeptiere diese Bedingung, um fortzufahren.');
+        } else if (field.tagName === 'SELECT') {
+          field.setCustomValidity('Bitte wähle eine Option aus.');
+        } else {
+          field.setCustomValidity('Bitte fülle dieses Feld aus.');
+        }
+      } else if (field.validity.typeMismatch && field.type === 'email') {
+        field.setCustomValidity('Bitte gib eine gültige E-Mail-Adresse ein.');
+      } else if (field.validity.typeMismatch && field.type === 'tel') {
+        field.setCustomValidity('Bitte gib eine gültige Telefonnummer ein.');
+      } else {
+        field.setCustomValidity('Bitte überprüfe deine Eingabe.');
+      }
+    });
+    field.addEventListener('input', function () { field.setCustomValidity(''); });
+    field.addEventListener('change', function () { field.setCustomValidity(''); });
+  });
+})();
+</script>
+
 </body>
 </html>
