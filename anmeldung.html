@@ -204,22 +204,24 @@ m203 -163 c31 -16 56 -59 41 -72 -5 -4 -88 -20 -184 -35 -96 -15 -187 -30
   <form>
     <h3>Anmeldung Fahrschule</h3>
 
+    <div class="field">
+      <label for="geschlecht">Geschlecht *</label>
+      <select id="geschlecht" required>
+        <option value="">– Bitte auswählen –</option>
+        <option>männlich</option>
+        <option>weiblich</option>
+        <option>divers</option>
+      </select>
+    </div>
+
     <div class="form-row">
       <div class="field"><label for="vorname">Vorname *</label><input id="vorname" type="text" required></div>
       <div class="field"><label for="nachname">Nachname *</label><input id="nachname" type="text" required></div>
     </div>
 
-    <div class="form-row">
-      <div class="field"><label for="zweitname">Zweitname</label><input id="zweitname" type="text"></div>
-      <div class="field">
-        <label for="geschlecht">Geschlecht *</label>
-        <select id="geschlecht" required>
-          <option value="">– Bitte auswählen –</option>
-          <option>männlich</option>
-          <option>weiblich</option>
-          <option>divers</option>
-        </select>
-      </div>
+    <div class="field">
+      <label for="zweitname">Zweitname</label>
+      <input id="zweitname" type="text">
     </div>
 
     <div class="field">
