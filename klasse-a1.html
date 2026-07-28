@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klasse A1 — Leichtkraftrad — Fahrschule Mayer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Work+Sans:wght@400;500;600&family=Titan+One&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-primary: #FFFF00; --color-primary-glow: #FFFF66;
+  --color-secondary: #FF0000; --color-secondary-dk: #C40500;
+  --color-bg: #0D0D0D; --color-surface: #191919; --color-border: #2A2A2A;
+  --color-muted: #8C8C8C; --color-body: #D9D9D9; --color-heading: #FFFFFF;
+  --font-heading: 'Oswald', sans-serif; --font-body: 'Work Sans', sans-serif;
+  --radius: 4px; --max-w: 1240px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-body); line-height: 1.6; }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+h1,h2,h3,h4 { font-family: var(--font-heading); color: var(--color-heading); line-height: 1.15; }
+a { color: inherit; }
+p { max-width: 62ch; color: var(--color-body); }
+
+.logo-mark-svg { width: 150px; height: auto; display: block; }
+
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(13,13,13,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--color-border); }
+.nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 12px 24px; }
+.nav__links { display: flex; gap: 28px; list-style: none; }
+.nav__links a { text-decoration: none; font-size: 0.9rem; color: var(--color-body); }
+.nav__links a:hover, .nav__links a.active { color: var(--color-primary); }
+.nav__cta { display: flex; align-items: center; gap: 16px; }
+.nav__phone { font-family: var(--font-heading); font-size: 0.95rem; color: var(--color-primary); text-decoration: none; white-space: nowrap; }
+@media (max-width: 900px) { .nav__links { display: none; } }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 30px; border-radius: var(--radius); font-family: var(--font-heading); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.9rem; cursor: pointer; border: 2px solid transparent; text-decoration: none; }
+.btn-primary { background: var(--color-primary); color: #0D0D0D; }
+.btn-outline { background: transparent; color: var(--color-primary); border-color: var(--color-primary); }
+
+.page-head { padding: 48px 0 32px; border-bottom: 1px solid var(--color-border); }
+.section__label { font-family: monospace; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-secondary); margin-bottom: 12px; display: block; }
+.breadcrumb { font-size: 0.8rem; color: var(--color-muted); margin-bottom: 16px; }
+.breadcrumb a { color: var(--color-muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--color-primary); }
+
+.class-hero { display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap; }
+.class-hero__code { font-family: var(--font-heading); font-size: 4rem; color: var(--color-primary); line-height: 1; }
+
+.section { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.fact-list { list-style: none; margin-top: 16px; }
+.fact-list li { display: flex; justify-content: space-between; padding: 12px 0; border-top: 1px solid var(--color-border); font-size: 0.92rem; }
+.fact-list li:first-child { border-top: none; }
+.fact-list span:first-child { color: var(--color-muted); }
+.fact-list span:last-child { color: var(--color-heading); font-weight: 500; text-align: right; }
+
+.price-card { background: #FFFFFF; color: #171717; border-radius: var(--radius); padding: 32px; max-width: 480px; }
+.price-card h3 { color: #171717; font-size: 1.2rem; margin-bottom: 4px; }
+.price-card .price-note { font-size: 0.75rem; color: #737373; margin-bottom: 16px; max-width: none; }
+.price-row { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 7px 0; border-bottom: 1px solid #eee; color: #404040; }
+.price-total { display: flex; justify-content: space-between; font-family: var(--font-heading); font-size: 1.3rem; margin-top: 14px; padding-top: 14px; border-top: 2px solid #171717; color: #171717; }
+.price-total b { color: var(--color-secondary-dk); }
+.price-pdf { display: inline-block; margin-top: 14px; font-size: 0.78rem; color: var(--color-secondary-dk); text-decoration: underline; }
+
+.related { display: flex; gap: 12px; flex-wrap: wrap; }
+.related a { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 10px 18px; text-decoration: none; font-family: var(--font-heading); font-size: 0.95rem; color: var(--color-heading); }
+.related a:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+.cta-band { background: var(--color-surface); border-radius: var(--radius); padding: 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+
+@media (max-width: 800px) { .grid-2 { grid-template-columns: 1fr; } }
+
+.footer { padding: 40px 0; border-top: 1px solid var(--color-border); }
+.footer__inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 0.8rem; color: var(--color-muted); }
+.footer__links { display: flex; gap: 20px; list-style: none; }
+.footer__links a { text-decoration: none; color: var(--color-muted); }
+.footer__links a:hover { color: var(--color-primary); }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="startseite.html" class="nav__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 574 260" class="logo-mark-svg">
+<g transform="translate(0.000000,260.000000) scale(0.100000,-0.100000)"><path d="M0 1299 c0 -1037 3 -1300 13 -1296 6 3 106 44 221 91 115 47 210 87
+211 88 2 2 5 162 6 355 3 254 7 353 15 353 6 0 12 -17 12 -37 0 -21 19 -137
+41 -258 22 -121 46 -249 53 -285 6 -36 12 -66 13 -68 1 -1 103 36 226 82 l224
+85 8 43 c4 24 28 145 52 269 25 124 45 242 45 262 0 24 5 37 13 37 11 0 13
+-49 9 -264 -3 -146 -2 -271 1 -279 4 -12 45 0 206 59 110 40 210 78 221 84 18
+10 20 20 20 130 0 65 4 121 9 124 5 3 17 -7 26 -22 116 -182 337 -184 593 -6
+35 25 67 42 72 39 4 -3 95 24 201 60 106 36 198 65 206 65 11 0 12 -27 7 -151
+l-7 -150 29 7 c50 11 286 106 354 141 171 91 234 166 343 418 19 44 74 167
+122 274 47 107 93 212 102 233 8 21 19 38 24 38 5 0 9 -27 9 -60 0 -88 30
+-159 91 -214 60 -54 119 -76 224 -83 232 -15 600 133 775 311 30 31 58 56 63
+56 5 0 6 -31 2 -70 -7 -66 -6 -70 13 -70 12 0 32 4 47 10 14 5 67 21 118 34
+146 39 269 74 273 79 2 2 15 64 30 138 14 74 30 146 35 160 26 67 100 100 254
+114 l71 7 18 82 c26 117 24 120 -54 124 -36 2 -105 -3 -155 -12 -49 -8 -173
+-20 -275 -26 -102 -6 -206 -13 -232 -17 l-46 -5 -17 -114 c-10 -63 -21 -114
+-26 -114 -5 0 -20 18 -33 39 -98 155 -392 210 -706 134 -95 -24 -184 -67 -257
+-124 -36 -28 -67 -48 -70 -45 -3 3 9 35 26 72 17 37 30 68 28 70 -3 3 -248
+-16 -424 -32 l-62 -5 -14 -42 c-8 -23 -34 -94 -57 -157 -23 -63 -46 -130 -51
+-147 -6 -18 -13 -33 -18 -33 -10 0 -91 289 -91 328 0 18 -3 32 -7 32 -5 0 -80
+-7 -168 -15 -88 -9 -197 -18 -242 -22 -46 -3 -83 -10 -83 -14 0 -4 66 -205
+146 -446 154 -465 171 -537 138 -574 -42 -48 -185 -112 -204 -93 -5 5 -14 30
+-21 56 -11 38 -10 90 2 275 30 481 5 616 -133 707 -78 52 -159 70 -308 69
+-204 -1 -340 -47 -455 -154 -100 -94 -157 -226 -172 -396 -7 -85 -13 -82 110
+-58 92 18 87 17 87 7 0 -5 -25 -26 -57 -48 -59 -41 -121 -111 -155 -177 -11
+-22 -23 -35 -28 -31 -6 8 4 544 23 1137 l4 137 -308 0 -308 0 -10 -52 c-13
+-63 -151 -792 -182 -958 -23 -128 -34 -164 -42 -140 -2 8 -10 44 -16 80 -72
+423 -136 793 -158 918 l-27 152 -303 0 -303 0 0 -1301z m4384 805 c25 -9 19
+-24 -9 -24 -16 0 -25 6 -25 15 0 16 9 19 34 9z m-16 -296 c-10 -31 -168 -62
+-183 -37 -10 16 -4 19 71 33 90 18 117 19 112 4z m-2078 -22 c0 -16 -10 -32
+-27 -44 -33 -22 -151 -67 -159 -59 -9 9 22 71 47 94 27 24 47 30 102 32 33 1
+37 -2 37 -23z m0 -423 c0 -30 -45 -105 -87 -145 -34 -32 -119 -72 -139 -64
+-32 12 -9 89 40 135 28 27 154 99 174 100 7 1 12 -11 12 -26z" fill="#FF0000"/></g>
+<g transform="translate(0.000000,260.000000) scale(0.100000,-0.100000)"><path d="M96 2533 c-6 -6 -9 -2423 -3 -2423 5 0 263 106 275 113 9 7 12 186
+13 840 l1 832 19 -120 c11 -66 38 -230 60 -365 42 -262 188 -1062 195 -1069 2
+-2 30 6 61 18 32 12 101 38 153 57 52 20 96 37 97 38 2 2 14 59 27 127 36 183
+194 994 222 1139 13 69 29 153 36 188 12 66 34 88 24 25 -5 -38 -12 -219 -21
+-603 -18 -775 -18 -773 -4 -768 207 73 280 105 284 123 2 11 11 344 20 740 8
+396 19 809 22 918 l6 197 -231 0 c-127 0 -233 -4 -236 -8 -4 -7 -71 -344 -126
+-637 -10 -55 -39 -206 -64 -335 -38 -198 -64 -351 -103 -595 -3 -22 -7 -35 -9
+-30 -2 6 -17 100 -34 210 -16 110 -54 342 -84 515 -51 294 -126 727 -144 830
+l-8 45 -221 2 c-121 1 -223 -1 -227 -4z M5525 2380 c-61 -13 -126 -38 -167
+-65 -21 -14 -40 -25 -42 -25 -3 0 -2 16 1 36 l6 36 -59 -6 c-32 -3 -96 -8
+-142 -12 -45 -3 -84 -10 -87 -14 -7 -11 -96 -552 -92 -556 4 -5 265 64 286 76
+12 6 23 43 39 130 12 66 30 139 38 161 29 71 118 114 276 134 50 6 51 8 64 78
+l6 37 -43 -1 c-24 -1 -62 -5 -84 -9z M4290 2296 c-284 -51 -449 -198 -495
+-442 -9 -47 -13 -97 -9 -124 25 -168 178 -243 401 -196 220 47 426 151 556
+281 86 86 85 86 -99 52 -114 -22 -124 -26 -171 -66 -81 -68 -235 -109 -306
+-82 -57 22 -92 102 -49 115 9 3 166 35 347 72 182 36 340 70 353 75 20 8 22
+15 22 72 0 52 -5 71 -28 108 -34 53 -88 92 -168 120 -75 27 -248 34 -354 15z
+m203 -163 c31 -16 56 -59 41 -72 -5 -4 -88 -20 -184 -35 -96 -15 -187 -30
+-202 -33 -69 -14 0 81 92 127 76 38 191 44 253 13z M3622 2225 c-73 -6 -136
+-16 -141 -21 -10 -10 -126 -335 -189 -529 l-39 -120 -7 50 c-4 28 -11 77 -17
+109 -13 71 -118 448 -128 459 -7 7 -308 -17 -317 -25 -2 -2 62 -202 141 -444
+80 -241 145 -450 145 -464 0 -42 -42 -113 -85 -141 -21 -15 -67 -37 -102 -49
+-47 -17 -64 -28 -68 -44 -8 -41 -12 -206 -5 -206 8 0 59 20 115 45 17 8 60 27
+97 43 118 53 199 118 256 207 14 22 53 103 88 180 78 176 148 334 181 405 14
+30 43 96 65 145 22 50 52 115 65 145 128 284 124 271 96 269 -10 -1 -78 -7
+-151 -14z M2129 2111 c-37 -10 -88 -28 -113 -41 -72 -34 -158 -119 -194 -192
+-31 -61 -72 -221 -60 -233 3 -4 63 4 133 17 l127 23 19 50 c33 90 113 137 235
+139 50 0 59 -3 80 -27 26 -30 31 -66 14 -98 -17 -31 -80 -65 -237 -128 -193
+-76 -245 -105 -313 -171 -101 -98 -147 -233 -138 -401 7 -118 40 -189 112
+-237 41 -27 57 -32 107 -32 117 0 259 71 381 191 42 42 79 74 82 71 4 -3 6
+-18 6 -34 0 -16 6 -31 13 -33 6 -3 75 17 152 44 119 42 139 52 135 68 -2 10
+-2 113 0 228 8 472 6 566 -14 628 -23 69 -74 126 -143 158 -68 32 -287 38
+-384 10z m245 -698 c-7 -102 -32 -150 -114 -227 -61 -57 -126 -86 -190 -86
+-41 0 -52 4 -70 28 -46 58 -4 174 85 230 69 45 259 141 278 142 17 0 17 -7 11
+-87z" fill="#FFFF00"/></g>
+</svg></a>
+    <ul class="nav__links">
+      <li><a href="fuehrerscheinklassen.html">Führerscheinklassen</a></li>
+      <li><a href="theoriekurse.html">Theoriekurse</a></li>
+      <li><a href="pruefungstermine.html">Prüfungen</a></li>
+      <li><a href="preise.html">Preise</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="tel:01743114259" class="nav__phone">0174 / 311 42 59</a>
+      <a href="anmeldung.html" class="btn btn-primary" style="padding:10px 20px; font-size:0.8rem;">Anmelden</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="container">
+    <div class="breadcrumb"><a href="fuehrerscheinklassen.html">Führerscheinklassen</a> / A1</div>
+    <div class="class-hero">
+      <span class="class-hero__code">A1</span>
+      <h1 style="font-size:2rem; text-transform:uppercase;">Leichtkraftrad</h1>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container grid-2">
+    <div>
+      <span class="section__label">Beschreibung</span>
+      <p>Für Leichtkrafträder bis 125 ccm und 11 kW — der früheste Einstieg ins Motorradfahren, schon ab 16 Jahren möglich.</p>
+      <ul class="fact-list">
+        <li><span>Mindestalter</span><span>16 Jahre</span></li>
+        <li><span>Vorbesitz</span><span>Keiner — Direkteinstieg</span></li>
+        <li><span>Übungsstunden</span><span>3</span></li>
+        <li><span>Sonderfahrten</span><span>12</span></li>
+        <li><span>Grundfahraufgaben</span><span>1</span></li>
+      </ul>
+    </div>
+    <div>
+      <span class="section__label">Kostenvoranschlag</span>
+      <div class="price-card">
+        <h3>Klasse A1</h3>
+        <p class="price-note">Stand 2025 · gültig bei Anmeldung innerhalb 14 Tage</p>
+        <div class="price-row"><span>Grundgebühr</span><span>450 €</span></div>
+        <div class="price-row"><span>3 Übungsstunden (45 Min.)</span><span>225 €</span></div>
+        <div class="price-row"><span>12 Sonderfahrten (45 Min.)</span><span>900 €</span></div>
+        <div class="price-row"><span>Grundfahraufgaben</span><span>65 €</span></div>
+        <div class="price-row"><span>Ausbildungsdiagramm</span><span>60 €</span></div>
+        <div class="price-row"><span>Verwaltungsgebühr</span><span>200 €</span></div>
+        <div class="price-row"><span>Theorieprüfung</span><span>60 €</span></div>
+        <div class="price-row"><span>Praktische Prüfung</span><span>200 €</span></div>
+        <div class="price-total"><span>Gesamt</span><b>2.160 €</b></div>
+        <a class="price-pdf" href="https://www.fahrschule-mayer.net/wp-content/uploads/2025/06/Fahrschule-Mayer-Kostenvoranschlag-A1-2025.pdf" target="_blank">PDF herunterladen ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section__label">Verwandte Klassen</span>
+    <div class="related">
+        <a href="klasse-a2.html">A2 — Kraftrad (begrenzt)</a>
+        <a href="klasse-am.html">AM — Moped/Roller</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-bottom:none;">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2 style="font-size:1.6rem;">Bereit für Klasse A1?</h2>
+        <p style="margin:0;">Jetzt unverbindlich anmelden — wir melden uns mit den nächsten Schritten.</p>
+      </div>
+      <a href="anmeldung.html" class="btn btn-primary">Jetzt anmelden</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <span>© 2019–2026 Fahrschule Mayer</span>
+    <ul class="footer__links">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

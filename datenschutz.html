@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutz — Fahrschule Mayer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Work+Sans:wght@400;500;600&family=Titan+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #FFFF00; --color-secondary: #FF0000;
+    --color-bg: #0D0D0D; --color-surface: #191919; --color-border: #2A2A2A;
+    --color-muted: #8C8C8C; --color-body: #D9D9D9; --color-heading: #FFFFFF;
+    --font-heading: 'Oswald', sans-serif; --font-body: 'Work Sans', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-body); line-height: 1.7; }
+  .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+  h1,h2,h3 { font-family: var(--font-heading); color: var(--color-heading); }
+  a { color: var(--color-primary); word-break: break-word; }
+
+  .nav { position: sticky; top: 0; z-index: 100; background: rgba(13,13,13,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--color-border); }
+  .nav__inner { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; }
+  .logo-mark-svg { width: 150px; height: auto; display: block; }
+  .nav__phone { font-family: var(--font-heading); font-size: 0.9rem; color: var(--color-primary); text-decoration: none; }
+  .nav__links { display: flex; gap: 28px; list-style: none; }
+  .nav__links a { text-decoration: none; font-size: 0.9rem; color: var(--color-body); }
+  .nav__links a:hover { color: var(--color-primary); }
+  @media (max-width: 900px) { .nav__links { display: none; } }
+
+  .page-head { padding: 56px 0 24px; }
+  .section__label { font-family: monospace; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-secondary); margin-bottom: 12px; display: block; }
+
+  .legal { padding: 0 0 80px; }
+  .legal h2 { font-size: 1.3rem; margin: 40px 0 12px; padding-top: 24px; border-top: 1px solid var(--color-border); }
+  .legal h2:first-of-type { border-top: none; padding-top: 0; }
+  .legal h3 { font-size: 1rem; margin: 20px 0 8px; color: var(--color-primary); }
+  .legal p, .legal li { margin-bottom: 14px; font-size: 0.9rem; color: var(--color-body); }
+  .legal ul { padding-left: 20px; margin-bottom: 14px; }
+  .info-box { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 4px; padding: 24px; margin-bottom: 14px; }
+  .source-note { font-size: 0.75rem; color: var(--color-muted); margin-top: 40px; }
+
+  .footer { padding: 40px 0; border-top: 1px solid var(--color-border); text-align: center; font-size: 0.8rem; color: var(--color-muted); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="startseite.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 574 260" class="logo-mark-svg">
+<g transform="translate(0.000000,260.000000) scale(0.100000,-0.100000)"><path d="M0 1299 c0 -1037 3 -1300 13 -1296 6 3 106 44 221 91 115 47 210 87
+211 88 2 2 5 162 6 355 3 254 7 353 15 353 6 0 12 -17 12 -37 0 -21 19 -137
+41 -258 22 -121 46 -249 53 -285 6 -36 12 -66 13 -68 1 -1 103 36 226 82 l224
+85 8 43 c4 24 28 145 52 269 25 124 45 242 45 262 0 24 5 37 13 37 11 0 13
+-49 9 -264 -3 -146 -2 -271 1 -279 4 -12 45 0 206 59 110 40 210 78 221 84 18
+10 20 20 20 130 0 65 4 121 9 124 5 3 17 -7 26 -22 116 -182 337 -184 593 -6
+35 25 67 42 72 39 4 -3 95 24 201 60 106 36 198 65 206 65 11 0 12 -27 7 -151
+l-7 -150 29 7 c50 11 286 106 354 141 171 91 234 166 343 418 19 44 74 167
+122 274 47 107 93 212 102 233 8 21 19 38 24 38 5 0 9 -27 9 -60 0 -88 30
+-159 91 -214 60 -54 119 -76 224 -83 232 -15 600 133 775 311 30 31 58 56 63
+56 5 0 6 -31 2 -70 -7 -66 -6 -70 13 -70 12 0 32 4 47 10 14 5 67 21 118 34
+146 39 269 74 273 79 2 2 15 64 30 138 14 74 30 146 35 160 26 67 100 100 254
+114 l71 7 18 82 c26 117 24 120 -54 124 -36 2 -105 -3 -155 -12 -49 -8 -173
+-20 -275 -26 -102 -6 -206 -13 -232 -17 l-46 -5 -17 -114 c-10 -63 -21 -114
+-26 -114 -5 0 -20 18 -33 39 -98 155 -392 210 -706 134 -95 -24 -184 -67 -257
+-124 -36 -28 -67 -48 -70 -45 -3 3 9 35 26 72 17 37 30 68 28 70 -3 3 -248
+-16 -424 -32 l-62 -5 -14 -42 c-8 -23 -34 -94 -57 -157 -23 -63 -46 -130 -51
+-147 -6 -18 -13 -33 -18 -33 -10 0 -91 289 -91 328 0 18 -3 32 -7 32 -5 0 -80
+-7 -168 -15 -88 -9 -197 -18 -242 -22 -46 -3 -83 -10 -83 -14 0 -4 66 -205
+146 -446 154 -465 171 -537 138 -574 -42 -48 -185 -112 -204 -93 -5 5 -14 30
+-21 56 -11 38 -10 90 2 275 30 481 5 616 -133 707 -78 52 -159 70 -308 69
+-204 -1 -340 -47 -455 -154 -100 -94 -157 -226 -172 -396 -7 -85 -13 -82 110
+-58 92 18 87 17 87 7 0 -5 -25 -26 -57 -48 -59 -41 -121 -111 -155 -177 -11
+-22 -23 -35 -28 -31 -6 8 4 544 23 1137 l4 137 -308 0 -308 0 -10 -52 c-13
+-63 -151 -792 -182 -958 -23 -128 -34 -164 -42 -140 -2 8 -10 44 -16 80 -72
+423 -136 793 -158 918 l-27 152 -303 0 -303 0 0 -1301z m4384 805 c25 -9 19
+-24 -9 -24 -16 0 -25 6 -25 15 0 16 9 19 34 9z m-16 -296 c-10 -31 -168 -62
+-183 -37 -10 16 -4 19 71 33 90 18 117 19 112 4z m-2078 -22 c0 -16 -10 -32
+-27 -44 -33 -22 -151 -67 -159 -59 -9 9 22 71 47 94 27 24 47 30 102 32 33 1
+37 -2 37 -23z m0 -423 c0 -30 -45 -105 -87 -145 -34 -32 -119 -72 -139 -64
+-32 12 -9 89 40 135 28 27 154 99 174 100 7 1 12 -11 12 -26z" fill="#FF0000"/></g>
+<g transform="translate(0.000000,260.000000) scale(0.100000,-0.100000)"><path d="M96 2533 c-6 -6 -9 -2423 -3 -2423 5 0 263 106 275 113 9 7 12 186
+13 840 l1 832 19 -120 c11 -66 38 -230 60 -365 42 -262 188 -1062 195 -1069 2
+-2 30 6 61 18 32 12 101 38 153 57 52 20 96 37 97 38 2 2 14 59 27 127 36 183
+194 994 222 1139 13 69 29 153 36 188 12 66 34 88 24 25 -5 -38 -12 -219 -21
+-603 -18 -775 -18 -773 -4 -768 207 73 280 105 284 123 2 11 11 344 20 740 8
+396 19 809 22 918 l6 197 -231 0 c-127 0 -233 -4 -236 -8 -4 -7 -71 -344 -126
+-637 -10 -55 -39 -206 -64 -335 -38 -198 -64 -351 -103 -595 -3 -22 -7 -35 -9
+-30 -2 6 -17 100 -34 210 -16 110 -54 342 -84 515 -51 294 -126 727 -144 830
+l-8 45 -221 2 c-121 1 -223 -1 -227 -4z M5525 2380 c-61 -13 -126 -38 -167
+-65 -21 -14 -40 -25 -42 -25 -3 0 -2 16 1 36 l6 36 -59 -6 c-32 -3 -96 -8
+-142 -12 -45 -3 -84 -10 -87 -14 -7 -11 -96 -552 -92 -556 4 -5 265 64 286 76
+12 6 23 43 39 130 12 66 30 139 38 161 29 71 118 114 276 134 50 6 51 8 64 78
+l6 37 -43 -1 c-24 -1 -62 -5 -84 -9z M4290 2296 c-284 -51 -449 -198 -495
+-442 -9 -47 -13 -97 -9 -124 25 -168 178 -243 401 -196 220 47 426 151 556
+281 86 86 85 86 -99 52 -114 -22 -124 -26 -171 -66 -81 -68 -235 -109 -306
+-82 -57 22 -92 102 -49 115 9 3 166 35 347 72 182 36 340 70 353 75 20 8 22
+15 22 72 0 52 -5 71 -28 108 -34 53 -88 92 -168 120 -75 27 -248 34 -354 15z
+m203 -163 c31 -16 56 -59 41 -72 -5 -4 -88 -20 -184 -35 -96 -15 -187 -30
+-202 -33 -69 -14 0 81 92 127 76 38 191 44 253 13z M3622 2225 c-73 -6 -136
+-16 -141 -21 -10 -10 -126 -335 -189 -529 l-39 -120 -7 50 c-4 28 -11 77 -17
+109 -13 71 -118 448 -128 459 -7 7 -308 -17 -317 -25 -2 -2 62 -202 141 -444
+80 -241 145 -450 145 -464 0 -42 -42 -113 -85 -141 -21 -15 -67 -37 -102 -49
+-47 -17 -64 -28 -68 -44 -8 -41 -12 -206 -5 -206 8 0 59 20 115 45 17 8 60 27
+97 43 118 53 199 118 256 207 14 22 53 103 88 180 78 176 148 334 181 405 14
+30 43 96 65 145 22 50 52 115 65 145 128 284 124 271 96 269 -10 -1 -78 -7
+-151 -14z M2129 2111 c-37 -10 -88 -28 -113 -41 -72 -34 -158 -119 -194 -192
+-31 -61 -72 -221 -60 -233 3 -4 63 4 133 17 l127 23 19 50 c33 90 113 137 235
+139 50 0 59 -3 80 -27 26 -30 31 -66 14 -98 -17 -31 -80 -65 -237 -128 -193
+-76 -245 -105 -313 -171 -101 -98 -147 -233 -138 -401 7 -118 40 -189 112
+-237 41 -27 57 -32 107 -32 117 0 259 71 381 191 42 42 79 74 82 71 4 -3 6
+-18 6 -34 0 -16 6 -31 13 -33 6 -3 75 17 152 44 119 42 139 52 135 68 -2 10
+-2 113 0 228 8 472 6 566 -14 628 -23 69 -74 126 -143 158 -68 32 -287 38
+-384 10z m245 -698 c-7 -102 -32 -150 -114 -227 -61 -57 -126 -86 -190 -86
+-41 0 -52 4 -70 28 -46 58 -4 174 85 230 69 45 259 141 278 142 17 0 17 -7 11
+-87z" fill="#FFFF00"/></g>
+</svg></a>
+    <ul class="nav__links">
+      <li><a href="fuehrerscheinklassen.html">Führerscheinklassen</a></li>
+      <li><a href="theoriekurse.html">Theoriekurse</a></li>
+      <li><a href="pruefungstermine.html">Prüfungen</a></li>
+      <li><a href="preise.html">Preise</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a href="tel:01743114259" class="nav__phone">0174 / 311 42 59</a>
+  </div>
+</nav>
+
+<header class="page-head container">
+  <span class="section__label">Datenschutz</span>
+  <h1 style="font-size:2.2rem; text-transform:uppercase;">Datenschutzerklärung</h1>
+</header>
+
+<div class="container legal">
+
+  <p>Personenbezogene Daten (nachfolgend zumeist nur „Daten“ genannt) werden von uns nur im Rahmen der Erforderlichkeit sowie zum Zwecke der Bereitstellung eines funktionsfähigen und nutzerfreundlichen Internetauftritts, inklusive seiner Inhalte und der dort angebotenen Leistungen, verarbeitet.</p>
+
+  <p>Gemäß Art. 4 Ziffer 1. der Verordnung (EU) 2016/679, also der Datenschutz-Grundverordnung (nachfolgend nur „DSGVO“ genannt), gilt als „Verarbeitung“ jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführte Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten, wie das Erheben, das Erfassen, die Organisation, das Ordnen, die Speicherung, die Anpassung oder Veränderung, das Auslesen, das Abfragen, die Verwendung, die Offenlegung durch Übermittlung, Verbreitung oder eine andere Form der Bereitstellung, den Abgleich oder die Verknüpfung, die Einschränkung, das Löschen oder die Vernichtung.</p>
+
+  <p>Unsere Datenschutzerklärung ist wie folgt gegliedert:<br>
+  I. Informationen über uns als Verantwortliche<br>
+  II. Rechte der Nutzer und Betroffenen<br>
+  III. Informationen zur Datenverarbeitung</p>
+
+  <h2>I. Informationen über uns als Verantwortliche</h2>
+  <p>Verantwortlicher Anbieter dieses Internetauftritts im datenschutzrechtlichen Sinne ist:</p>
+  <div class="info-box">
+    <address style="font-style:normal;">
+      Stefan Mayer<br>Fahrschule Mayer<br>Heidelberger Straße 25<br>69190 Walldorf<br><br>
+      Telefon: <a href="tel:01743114259">0174/3114259</a><br>
+      E-Mail: <a href="mailto:info@fahrschule-mayer.net">info@fahrschule-mayer.net</a>
+    </address>
+  </div>
+
+  <h2>II. Rechte der Nutzer und Betroffenen</h2>
+  <p>Mit Blick auf die nachfolgend noch näher beschriebene Datenverarbeitung haben die Nutzer und Betroffenen das Recht</p>
+  <ul>
+    <li>auf Bestätigung, ob sie betreffende Daten verarbeitet werden, auf Auskunft über die verarbeiteten Daten, auf weitere Informationen über die Datenverarbeitung sowie auf Kopien der Daten (vgl. auch Art. 15 DSGVO);</li>
+    <li>auf Berichtigung oder Vervollständigung unrichtiger bzw. unvollständiger Daten (vgl. auch Art. 16 DSGVO);</li>
+    <li>auf unverzügliche Löschung der sie betreffenden Daten (vgl. auch Art. 17 DSGVO), oder, alternativ, soweit eine weitere Verarbeitung gemäß Art. 17 Abs. 3 DSGVO erforderlich ist, auf Einschränkung der Verarbeitung nach Maßgabe von Art. 18 DSGVO;</li>
+    <li>auf Erhalt der sie betreffenden und von ihnen bereitgestellten Daten und auf Übermittlung dieser Daten an andere Anbieter/Verantwortliche (vgl. auch Art. 20 DSGVO);</li>
+    <li>auf Beschwerde gegenüber der Aufsichtsbehörde, sofern sie der Ansicht sind, dass die sie betreffenden Daten durch den Anbieter unter Verstoß gegen datenschutzrechtliche Bestimmungen verarbeitet werden (vgl. auch Art. 77 DSGVO).</li>
+  </ul>
+  <p>Darüber hinaus ist der Anbieter dazu verpflichtet, alle Empfänger, denen gegenüber Daten durch den Anbieter offengelegt worden sind, über jedwede Berichtigung oder Löschung von Daten oder die Einschränkung der Verarbeitung, die aufgrund der Artikel 16, 17 Abs. 1, 18 DSGVO erfolgt, zu unterrichten. Diese Verpflichtung besteht jedoch nicht, soweit diese Mitteilung unmöglich oder mit einem unverhältnismäßigen Aufwand verbunden ist. Unbeschadet dessen hat der Nutzer ein Recht auf Auskunft über diese Empfänger.</p>
+  <p>Ebenfalls haben die Nutzer und Betroffenen nach Art. 21 DSGVO das Recht auf Widerspruch gegen die künftige Verarbeitung der sie betreffenden Daten, sofern die Daten durch den Anbieter nach Maßgabe von Art. 6 Abs. 1 lit. f) DSGVO verarbeitet werden. Insbesondere ist ein Widerspruch gegen die Datenverarbeitung zum Zwecke der Direktwerbung statthaft.</p>
+
+  <h2>III. Informationen zur Datenverarbeitung</h2>
+  <p>Ihre bei Nutzung unseres Internetauftritts verarbeiteten Daten werden gelöscht oder gesperrt, sobald der Zweck der Speicherung entfällt, der Löschung der Daten keine gesetzlichen Aufbewahrungspflichten entgegenstehen und nachfolgend keine anderslautenden Angaben zu einzelnen Verarbeitungsverfahren gemacht werden.</p>
+
+  <h3>Serverdaten</h3>
+  <p>Aus technischen Gründen, insbesondere zur Gewährleistung eines sicheren und stabilen Internetauftritts, werden Daten durch Ihren Internet-Browser an uns bzw. an unseren Webspace-Provider übermittelt. Mit diesen sog. Server-Logfiles werden u.a. Typ und Version Ihres Internetbrowsers, das Betriebssystem, die Website, von der aus Sie auf unseren Internetauftritt gewechselt haben (Referrer URL), die Website(s) unseres Internetauftritts, die Sie besuchen, Datum und Uhrzeit des jeweiligen Zugriffs sowie die IP-Adresse des Internetanschlusses, von dem aus die Nutzung unseres Internetauftritts erfolgt, erhoben.</p>
+  <p>Diese so erhobenen Daten werden vorübergehend gespeichert, dies jedoch nicht gemeinsam mit anderen Daten von Ihnen.</p>
+  <p>Diese Speicherung erfolgt auf der Rechtsgrundlage von Art. 6 Abs. 1 lit. f) DSGVO. Unser berechtigtes Interesse liegt in der Verbesserung, Stabilität, Funktionalität und Sicherheit unseres Internetauftritts.</p>
+  <p>Die Daten werden spätestens nach sieben Tagen wieder gelöscht, soweit keine weitere Aufbewahrung zu Beweiszwecken erforderlich ist. Andernfalls sind die Daten bis zur endgültigen Klärung eines Vorfalls ganz oder teilweise von der Löschung ausgenommen.</p>
+
+  <h3>Cookies</h3>
+  <p><strong>a) Sitzungs-Cookies/Session-Cookies</strong><br>
+  Wir verwenden mit unserem Internetauftritt sog. Cookies. Cookies sind kleine Textdateien oder andere Speichertechnologien, die durch den von Ihnen eingesetzten Internet-Browser auf Ihrem Endgerät abgelegt und gespeichert werden. Durch diese Cookies werden im individuellen Umfang bestimmte Informationen von Ihnen, wie beispielsweise Ihre Browser- oder Standortdaten oder Ihre IP-Adresse, verarbeitet.</p>
+  <p>Durch diese Verarbeitung wird unser Internetauftritt benutzerfreundlicher, effektiver und sicherer, da die Verarbeitung bspw. die Wiedergabe unseres Internetauftritts in unterschiedlichen Sprachen oder das Angebot einer Warenkorbfunktion ermöglicht.</p>
+  <p>Rechtsgrundlage dieser Verarbeitung ist Art. 6 Abs. 1 lit b.) DSGVO, sofern durch diese Cookies Daten zur Vertragsanbahnung oder Vertragsabwicklung verarbeitet werden.</p>
+  <p>Falls die Verarbeitung nicht der Vertragsanbahnung oder Vertragsabwicklung dient, liegt unser berechtigtes Interesse in der Verbesserung der Funktionalität unseres Internetauftritts. Rechtsgrundlage ist dann Art. 6 Abs. 1 lit. f) DSGVO.</p>
+  <p>Mit Schließen Ihres Internet-Browsers werden diese Session-Cookies gelöscht.</p>
+  <p><strong>b) Drittanbieter-Cookies</strong><br>
+  Gegebenenfalls werden mit unserem Internetauftritt auch Cookies von Partnerunternehmen, mit denen wir zum Zwecke der Werbung, der Analyse oder der Funktionalitäten unseres Internetauftritts zusammenarbeiten, verwendet.</p>
+  <p><strong>c) Beseitigungsmöglichkeit</strong><br>
+  Sie können die Installation der Cookies durch eine Einstellung Ihres Internet-Browsers verhindern oder einschränken. Ebenfalls können Sie bereits gespeicherte Cookies jederzeit löschen. Sollten Sie die Installation der Cookies verhindern oder einschränken, kann dies allerdings dazu führen, dass nicht sämtliche Funktionen unseres Internetauftritts vollumfänglich nutzbar sind.</p>
+
+  <h3>Vertragsabwicklung</h3>
+  <p>Die von Ihnen zur Inanspruchnahme unseres Waren- und/oder Dienstleistungsangebots übermittelten Daten werden von uns zum Zwecke der Vertragsabwicklung verarbeitet und sind insoweit erforderlich. Vertragsschluss und Vertragsabwicklung sind ohne Bereitstellung Ihrer Daten nicht möglich.</p>
+  <p>Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. b) DSGVO. Wir löschen die Daten mit vollständiger Vertragsabwicklung, müssen dabei aber die steuer- und handelsrechtlichen Aufbewahrungsfristen beachten.</p>
+
+  <h3>Kontaktanfragen / Kontaktmöglichkeit</h3>
+  <p>Sofern Sie per Kontaktformular, Anmeldeformular oder E-Mail mit uns in Kontakt treten, werden die dabei von Ihnen angegebenen Daten zur Bearbeitung Ihrer Anfrage genutzt. Die Angabe der Daten ist zur Bearbeitung und Beantwortung Ihrer Anfrage erforderlich — ohne deren Bereitstellung können wir Ihre Anfrage nicht oder allenfalls eingeschränkt beantworten.</p>
+  <p>Rechtsgrundlage für diese Verarbeitung ist Art. 6 Abs. 1 lit. b) DSGVO.</p>
+  <p>Ihre Daten werden gelöscht, sofern Ihre Anfrage abschließend beantwortet worden ist und der Löschung keine gesetzlichen Aufbewahrungspflichten entgegenstehen, wie bspw. bei einer sich etwaig anschließenden Vertragsabwicklung.</p>
+
+  <h3>Google Fonts</h3>
+  <p>In unserem Internetauftritt setzen wir Google Fonts zur Darstellung externer Schriftarten ein. Es handelt sich hierbei um einen Dienst der Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043 USA, nachfolgend nur „Google“ genannt.</p>
+  <p>Um die Darstellung bestimmter Schriften in unserem Internetauftritt zu ermöglichen, wird bei Aufruf unseres Internetauftritts eine Verbindung zu dem Google-Server in den USA aufgebaut.</p>
+  <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f) DSGVO. Unser berechtigtes Interesse liegt in der Optimierung und dem wirtschaftlichen Betrieb unseres Internetauftritts.</p>
+  <p>Durch die bei Aufruf unseres Internetauftritts hergestellte Verbindung zu Google kann Google ermitteln, von welcher Website Ihre Anfrage gesendet worden ist und an welche IP-Adresse die Darstellung der Schrift zu übermitteln ist. Weitere Informationen dazu finden Sie unter <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+  <p class="source-note">Quelle: Muster-Datenschutzerklärung der Anwaltskanzlei Weiß &amp; Partner (übernommen von der bestehenden Fahrschule-Mayer-Website, Adresse aktualisiert)</p>
+</div>
+
+<footer class="footer">© 2019–2026 Fahrschule Mayer</footer>
+
+</body>
+</html>
