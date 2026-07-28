@@ -50,20 +50,38 @@
   .page-head { padding: 56px 0 32px; }
   .section__label { font-family: monospace; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-secondary); margin-bottom: 12px; display: block; }
 
+  .notice { display: flex; gap: 14px; background: var(--color-surface); border: 1px solid var(--color-secondary); border-left: 4px solid var(--color-secondary); border-radius: var(--radius); padding: 20px 24px; margin-bottom: 32px; font-size: 0.9rem; color: var(--color-body); }
+  .notice strong { color: var(--color-heading); }
+  .notice a { color: var(--color-primary); text-decoration: underline; }
+
+  .info-section { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 28px 32px; margin-bottom: 32px; }
+  .info-section h2 { font-size: 1.15rem; margin-bottom: 10px; }
+  .info-section p { font-size: 0.9rem; color: var(--color-muted); max-width: none; margin-bottom: 14px; }
+  .info-section .doc-links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .info-section .doc-links a { font-size: 0.82rem; color: var(--color-primary); text-decoration: underline; }
+
   form { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 40px; margin-bottom: 56px; }
+  form h3 { font-size: 1.1rem; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--color-border); }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
   .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
   label { font-size: 0.8rem; color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.04em; }
   input, select, textarea {
     background: #0D0D0D; border: 1px solid var(--color-border); border-radius: var(--radius);
-    padding: 12px 14px; color: var(--color-heading); font-family: var(--font-body); font-size: 0.95rem;
+    padding: 12px 14px; color: var(--color-heading); font-family: var(--font-body); font-size: 0.95rem; width: 100%;
   }
   input:focus, select:focus, textarea:focus { outline: 2px solid var(--color-primary); border-color: var(--color-primary); }
+  .field-hint { font-size: 0.75rem; color: var(--color-muted); text-transform: none; letter-spacing: normal; }
   .checkbox-row { display: flex; align-items: flex-start; gap: 10px; margin: 20px 0; font-size: 0.85rem; color: var(--color-muted); }
   .checkbox-row input { width: auto; margin-top: 3px; }
+  .class-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 8px; }
+  .class-check { display: flex; align-items: center; gap: 6px; background: #0D0D0D; border: 1px solid var(--color-border); border-radius: var(--radius); padding: 10px; font-size: 0.85rem; }
+  .class-check input { width: auto; }
+  .class-check label { text-transform: none; font-size: 0.85rem; color: var(--color-body); }
+  .field-error { font-size: 0.78rem; color: var(--color-secondary); display: none; margin-top: 6px; }
+  .field-error.visible { display: block; }
   .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 30px; border-radius: var(--radius); font-family: var(--font-heading); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.9rem; cursor: pointer; border: none; }
   .btn-primary { background: var(--color-primary); color: #0D0D0D; width: 100%; }
-  @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .class-grid { grid-template-columns: repeat(2, 1fr); } }
 
   .footer { padding: 40px 0; border-top: 1px solid var(--color-border); text-align: center; font-size: 0.8rem; color: var(--color-muted); }
 </style>
@@ -146,6 +164,7 @@ m203 -163 c31 -16 56 -59 41 -72 -5 -4 -88 -20 -184 -35 -96 -15 -187 -30
       <li><a href="theoriekurse.html">Theoriekurse</a></li>
       <li><a href="preise.html">Preise</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="anmeldung.html" class="active">Anmelden</a></li>
     </ul>
     <button type="button" class="nav__toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
     <a href="tel:01743114259" class="nav__phone">0174 / 311 42 59</a>
@@ -156,45 +175,120 @@ m203 -163 c31 -16 56 -59 41 -72 -5 -4 -88 -20 -184 -35 -96 -15 -187 -30
 <header class="page-head container">
   <span class="section__label">Anmeldung</span>
   <h1 style="font-size:2.5rem; text-transform:uppercase; margin-bottom:12px;">Verbindliche Anmeldung</h1>
-  <p style="color:var(--color-muted); max-width:60ch;">Fülle das Formular aus — wir melden uns zeitnah mit den nächsten Schritten. Anmeldung auch auf Englisch möglich (bitte im Nachrichtenfeld angeben).</p>
+  <p style="color:var(--color-muted); max-width:60ch;">Über das untenstehende Formular könnt ihr euch bei uns anmelden — wir bereiten anschließend alle nötigen Dokumente für euch vor. Die Ausbildung ist auch komplett auf Englisch möglich.</p>
 </header>
 
-<!-- SECTION: Anmeldeformular -->
+<!-- SECTION: Uyarı — bağlayıcı kayıt notu (gerçek siteden) -->
 <div class="container">
+  <div class="notice">
+    <div>
+      <strong>Achtung:</strong> Hierbei handelt es sich um eine <strong>verbindliche Anmeldung</strong>.
+      Wenn ihr euch lediglich informieren möchtet, Fragen an uns habt oder Auskünfte zu
+      Kostenvoranschlägen haben möchtet, klickt bitte <a href="kontakt.html">hier</a>.
+    </div>
+  </div>
+
+  <!-- SECTION: Fahrschulantrag bilgisi (gerçek siteden, gerçek PDF linkleri) -->
+  <div class="info-section">
+    <h2>Fahrschulantrag</h2>
+    <p>Wir können den Fahrschulantrag für das Rathaus nur noch online an euch versenden und das Vorausfüllen der Anträge leider nicht mehr für euch übernehmen. Nachfolgend findet ihr ein Muster sowie eine Mustererklärung des Fahrschulantrages — damit könnt ihr den Antrag korrekt ausfüllen.</p>
+    <div class="doc-links">
+      <a href="https://www.fahrschule-mayer.net/wp-content/uploads/2021/12/Fahrschule-Mayer-Muster-Fahrschulantrag.pdf" target="_blank">Muster Fahrschulantrag (PDF) ↓</a>
+      <a href="https://www.fahrschule-mayer.net/wp-content/uploads/2021/12/Fahrschule-Mayer-Mustererklaerung-Fahrschulantrag.pdf" target="_blank">Mustererklärung Fahrschulantrag (PDF) ↓</a>
+    </div>
+  </div>
+
+  <!-- SECTION: Anmeldeformular (gerçek sitedeki tüm alanlarla) -->
   <form>
+    <h3>Anmeldung Fahrschule</h3>
+
     <div class="form-row">
-      <div class="field"><label for="vorname">Vorname *</label><input id="vorname" type="text" required></div>
+      <div class="field">
+        <label for="geschlecht">Geschlecht *</label>
+        <select id="geschlecht" required>
+          <option value="">– Bitte auswählen –</option>
+          <option>männlich</option>
+          <option>weiblich</option>
+          <option>divers</option>
+        </select>
+      </div>
       <div class="field"><label for="nachname">Nachname *</label><input id="nachname" type="text" required></div>
     </div>
+
     <div class="form-row">
+      <div class="field"><label for="vorname">Vorname *</label><input id="vorname" type="text" required></div>
+      <div class="field"><label for="zweitname">Zweitname</label><input id="zweitname" type="text"></div>
+    </div>
+
+    <div class="field">
+      <label for="strasse">Straße und Hausnummer *</label>
+      <input id="strasse" type="text" required>
+    </div>
+
+    <div class="form-row">
+      <div class="field"><label for="plz">Postleitzahl *</label><input id="plz" type="text" inputmode="numeric" pattern="[0-9]{5}" required></div>
+      <div class="field"><label for="wohnort">Wohnort *</label><input id="wohnort" type="text" required></div>
+    </div>
+
+    <div class="form-row">
+      <div class="field"><label for="geburtsdatum">Geburtsdatum *</label><input id="geburtsdatum" type="date" required></div>
+      <div class="field"><label for="geburtsort">Geburtsort *</label><input id="geburtsort" type="text" required></div>
+    </div>
+
+    <div class="form-row">
+      <div class="field"><label for="nationalitaet">Nationalität *</label><input id="nationalitaet" type="text" required></div>
       <div class="field"><label for="email">E-Mail *</label><input id="email" type="email" required></div>
-      <div class="field"><label for="telefon">Telefon *</label><input id="telefon" type="tel" required></div>
     </div>
+
+    <div class="form-row">
+      <div class="field"><label for="telefon">Telefonnummer *</label><input id="telefon" type="tel" required></div>
+      <div class="field">
+        <label for="vorbesitz">Führerscheinvorbesitz <span class="field-hint">(falls vorhanden)</span></label>
+        <input id="vorbesitz" type="text" placeholder="z. B. Klasse B seit 2019">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="sehhilfe">Sehhilfe *</label>
+        <select id="sehhilfe" required>
+          <option value="">– Bitte auswählen –</option>
+          <option>Ja</option>
+          <option>Nein</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="quelle">Wie seid ihr auf uns aufmerksam geworden? <span class="field-hint">(optional)</span></label>
+        <input id="quelle" type="text">
+      </div>
+    </div>
+
     <div class="field">
-      <label for="klasse">Führerscheinklasse *</label>
-      <select id="klasse" required>
-        <option value="">Bitte wählen</option>
-        <option>Klasse B — PKW</option>
-        <option>Klasse BE — PKW + Anhänger</option>
-        <option>Klasse A — Motorrad</option>
-        <option>Klasse A1 — Leichtkraftrad</option>
-        <option>Klasse A2 — Kraftrad</option>
-        <option>Klasse AM — Moped/Roller</option>
-        <option>Klasse B196 — Motorrad-Erweiterung</option>
-      </select>
+      <label>Führerscheinklassen *</label>
+      <div class="class-grid" id="classGrid">
+        <div class="class-check"><input type="checkbox" id="cls-a" name="klassen" value="A"><label for="cls-a">A</label></div>
+        <div class="class-check"><input type="checkbox" id="cls-a1" name="klassen" value="A1"><label for="cls-a1">A1</label></div>
+        <div class="class-check"><input type="checkbox" id="cls-a2" name="klassen" value="A2"><label for="cls-a2">A2</label></div>
+        <div class="class-check"><input type="checkbox" id="cls-am" name="klassen" value="AM"><label for="cls-am">AM</label></div>
+        <div class="class-check"><input type="checkbox" id="cls-b" name="klassen" value="B"><label for="cls-b">B</label></div>
+        <div class="class-check"><input type="checkbox" id="cls-be" name="klassen" value="BE"><label for="cls-be">BE</label></div>
+        <div class="class-check"><input type="checkbox" id="cls-bf17" name="klassen" value="BF17"><label for="cls-bf17">BF17</label></div>
+        <div class="class-check"><input type="checkbox" id="cls-b78" name="klassen" value="B78"><label for="cls-b78">B78</label></div>
+        <div class="class-check"><input type="checkbox" id="cls-b196" name="klassen" value="B196"><label for="cls-b196">B196</label></div>
+        <div class="class-check"><input type="checkbox" id="cls-b197" name="klassen" value="B197"><label for="cls-b197">B197</label></div>
+      </div>
+      <span class="field-error" id="classGridError">Bitte wähle mindestens eine Führerscheinklasse aus.</span>
     </div>
-    <div class="field">
-      <label for="nachricht">Nachricht (optional)</label>
-      <textarea id="nachricht" rows="4"></textarea>
-    </div>
+
     <div class="checkbox-row">
       <input type="checkbox" id="verbindlich" required>
-      <label for="verbindlich" style="text-transform:none;">Hiermit handelt es sich um eine verbindliche Anmeldung.</label>
+      <label for="verbindlich" style="text-transform:none;">Hiermit bestätige ich, dass ich mit meinen personenbezogenen Daten eine verbindliche Fahrschulanmeldung durchführe.</label>
     </div>
     <div class="checkbox-row">
       <input type="checkbox" id="datenschutz" required>
-      <label for="datenschutz" style="text-transform:none;">Ich stimme der <a href="datenschutz.html" style="color:var(--color-primary);">Datenschutzerklärung</a> zu.</label>
+      <label for="datenschutz" style="text-transform:none;">Hiermit willige ich ein, dass die angegebenen Daten zur Fahrschulanmeldung gemäß der <a href="datenschutz.html" style="color:var(--color-primary);">Datenschutzerklärung</a> verwendet werden dürfen.</label>
     </div>
+
     <button type="submit" class="btn btn-primary">Verbindlich anmelden</button>
   </form>
 
@@ -225,12 +319,33 @@ m203 -163 c31 -16 56 -59 41 -72 -5 -4 -88 -20 -184 -35 -96 -15 -187 -30
         field.setCustomValidity('Bitte gib eine gültige E-Mail-Adresse ein.');
       } else if (field.validity.typeMismatch && field.type === 'tel') {
         field.setCustomValidity('Bitte gib eine gültige Telefonnummer ein.');
+      } else if (field.validity.patternMismatch && field.id === 'plz') {
+        field.setCustomValidity('Bitte gib eine gültige 5-stellige Postleitzahl ein.');
       } else {
         field.setCustomValidity('Bitte überprüfe deine Eingabe.');
       }
     });
     field.addEventListener('input', function () { field.setCustomValidity(''); });
     field.addEventListener('change', function () { field.setCustomValidity(''); });
+  });
+
+  // Führerscheinklassen: mindestens eine Auswahl erforderlich
+  var classChecks = form.querySelectorAll('input[name="klassen"]');
+  var classError = document.getElementById('classGridError');
+  function classesSelected() {
+    return Array.prototype.some.call(classChecks, function (c) { return c.checked; });
+  }
+  form.addEventListener('submit', function (e) {
+    if (!classesSelected()) {
+      e.preventDefault();
+      classError.classList.add('visible');
+      document.getElementById('classGrid').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  });
+  classChecks.forEach(function (c) {
+    c.addEventListener('change', function () {
+      if (classesSelected()) classError.classList.remove('visible');
+    });
   });
 })();
 </script>
