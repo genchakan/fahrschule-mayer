@@ -31,7 +31,23 @@
   .nav__links a:hover, .nav__links a.active { color: var(--color-primary); }
   .nav__cta { display: flex; align-items: center; gap: 16px; }
   .nav__phone { font-family: var(--font-heading); font-size: 0.95rem; color: var(--color-primary); text-decoration: none; white-space: nowrap; }
-  @media (max-width: 900px) { .nav__links { display: none; } }
+  .nav__toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 32px; height: 24px; background: none; border: none; cursor: pointer; padding: 0; z-index: 101; flex-shrink: 0; }
+  .nav__toggle span { display: block; width: 100%; height: 2px; background: #FFFFFF; border-radius: 2px; transition: transform .2s ease, opacity .2s ease; }
+  .nav__toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav__toggle.is-open span:nth-child(2) { opacity: 0; }
+  .nav__toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  @media (max-width: 900px) {
+    .nav__toggle { display: flex; }
+    .nav__links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--color-bg, #0D0D0D); border-bottom: 1px solid var(--color-border, #2A2A2A); padding: 8px 0; margin: 0; }
+    .nav__links.is-open { display: flex; }
+    .nav__links li { width: 100%; }
+    .nav__links a { display: block; padding: 14px 24px; }
+    .nav__phone { display: none; }
+    .nav__inner { gap: 10px; padding: 10px 16px !important; }
+    .logo-mark-svg { width: 100px !important; }
+    .nav__cta { gap: 10px !important; }
+    .nav__cta .btn { padding: 8px 14px !important; font-size: 0.72rem !important; }
+  }
 
   .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 30px; border-radius: var(--radius); font-family: var(--font-heading); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.9rem; cursor: pointer; border: 2px solid transparent; text-decoration: none; }
   .btn-primary { background: var(--color-primary); color: #0D0D0D; }
@@ -139,6 +155,7 @@ m203 -163 c31 -16 56 -59 41 -72 -5 -4 -88 -20 -184 -35 -96 -15 -187 -30
       <li><a href="preise.html" class="active">Preise</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
     </ul>
+    <button type="button" class="nav__toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav__cta">
       <a href="tel:01743114259" class="nav__phone">0174 / 311 42 59</a>
       <a href="anmeldung.html" class="btn btn-primary" style="padding:10px 20px; font-size:0.8rem;">Anmelden</a>
@@ -278,5 +295,18 @@ m203 -163 c31 -16 56 -59 41 -72 -5 -4 -88 -20 -184 -35 -96 -15 -187 -30
   </div>
 </footer>
 
+
+<script>
+(function () {
+  var toggle = document.getElementById('navToggle');
+  var links = document.querySelector('.nav__links');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function () {
+    var isOpen = links.classList.toggle('is-open');
+    toggle.classList.toggle('is-open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+})();
+</script>
 </body>
 </html>
