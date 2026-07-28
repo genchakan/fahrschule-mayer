@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prüfungstermine — Fahrschule Mayer</title>
+<title>Über uns — Fahrschule Mayer</title>
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Work+Sans:wght@400;500;600&family=Titan+One&display=swap" rel="stylesheet">
@@ -33,22 +33,22 @@ p { max-width: 62ch; color: var(--color-body); }
 .nav__cta { display: flex; align-items: center; gap: 16px; }
 .nav__phone { font-family: var(--font-heading); font-size: 0.95rem; color: var(--color-primary); text-decoration: none; white-space: nowrap; }
 .nav__toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 32px; height: 24px; background: none; border: none; cursor: pointer; padding: 0; z-index: 101; flex-shrink: 0; }
-  .nav__toggle span { display: block; width: 100%; height: 2px; background: #FFFFFF; border-radius: 2px; transition: transform .2s ease, opacity .2s ease; }
-  .nav__toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav__toggle.is-open span:nth-child(2) { opacity: 0; }
-  .nav__toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  @media (max-width: 900px) {
-    .nav__toggle { display: flex; }
-    .nav__links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--color-bg, #0D0D0D); border-bottom: 1px solid var(--color-border, #2A2A2A); padding: 8px 0; margin: 0; }
-    .nav__links.is-open { display: flex; }
-    .nav__links li { width: 100%; }
-    .nav__links a { display: block; padding: 14px 24px; }
-    .nav__phone { display: none; }
-    .nav__inner { gap: 10px; padding: 10px 16px !important; }
-    .logo-mark-svg { width: 100px !important; }
-    .nav__cta { gap: 10px !important; }
-    .nav__cta .btn { padding: 8px 14px !important; font-size: 0.72rem !important; }
-  }
+.nav__toggle span { display: block; width: 100%; height: 2px; background: #FFFFFF; border-radius: 2px; transition: transform .2s ease, opacity .2s ease; }
+.nav__toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__toggle.is-open span:nth-child(2) { opacity: 0; }
+.nav__toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 900px) {
+  .nav__toggle { display: flex; }
+  .nav__links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--color-bg, #0D0D0D); border-bottom: 1px solid var(--color-border, #2A2A2A); padding: 8px 0; margin: 0; }
+  .nav__links.is-open { display: flex; }
+  .nav__links li { width: 100%; }
+  .nav__links a { display: block; padding: 14px 24px; }
+  .nav__phone { display: none; }
+  .nav__inner { gap: 10px; padding: 10px 16px !important; }
+  .logo-mark-svg { width: 100px !important; }
+  .nav__cta { gap: 10px !important; }
+  .nav__cta .btn { padding: 8px 14px !important; font-size: 0.72rem !important; }
+}
 
 .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 30px; border-radius: var(--radius); font-family: var(--font-heading); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.9rem; cursor: pointer; border: 2px solid transparent; text-decoration: none; }
 .btn-primary { background: var(--color-primary); color: #0D0D0D; }
@@ -93,24 +93,16 @@ p { max-width: 62ch; color: var(--color-body); }
 .footer__links a { text-decoration: none; color: var(--color-muted); }
 .footer__links a:hover { color: var(--color-primary); }
 
-.timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
-.timeline-item { background: var(--color-surface); border-left: 3px solid var(--color-primary); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; }
-.timeline-item__name { font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-heading); }
-.timeline-item__date { font-size: 0.85rem; color: var(--color-muted); margin-top: 4px; }
-@media (max-width: 900px) { .timeline { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 600px) { .timeline { grid-template-columns: 1fr; } }
-
-.lesson-list { columns: 2; column-gap: 40px; margin-top: 16px; }
-.lesson-list li { font-size: 0.9rem; padding: 8px 0; border-bottom: 1px solid var(--color-border); break-inside: avoid; }
-@media (max-width: 700px) { .lesson-list { columns: 1; } }
-
-.exam__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 16px; }
-.exam-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 32px; }
-.exam-card h3 { font-size: 1.4rem; margin-bottom: 12px; }
-.exam-card ul { list-style: none; margin-top: 16px; }
-.exam-card li { font-size: 0.9rem; padding: 8px 0; border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; }
-.exam-card li:first-child { border-top: none; }
-@media (max-width: 800px) { .exam__grid { grid-template-columns: 1fr; } }
+.about__grid { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; margin-top: 16px; }
+.about__portrait { aspect-ratio: 3/4; background: linear-gradient(160deg, #191919, #0a0a0a); border: 1px solid var(--color-border); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.about__portrait::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(-45deg, rgba(255,255,0,0.04) 0 2px, transparent 2px 14px); }
+.about__monogram { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 4rem; color: var(--color-primary); border: 3px solid var(--color-secondary); border-radius: 50%; width: 140px; height: 140px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+.fact-list { list-style: none; margin-top: 20px; max-width: 480px; }
+.fact-list li { display: flex; justify-content: space-between; padding: 12px 0; border-top: 1px solid var(--color-border); font-size: 0.92rem; }
+.fact-list li:first-child { border-top: none; }
+.fact-list span:first-child { color: var(--color-muted); }
+.fact-list span:last-child { color: var(--color-heading); font-weight: 500; }
+@media (max-width: 700px) { .about__grid { grid-template-columns: 1fr; } .about__portrait { max-width: 200px; } }
 </style>
 </head>
 <body>
@@ -187,10 +179,10 @@ m203 -163 c31 -16 56 -59 41 -72 -5 -4 -88 -20 -184 -35 -96 -15 -187 -30
     <ul class="nav__links">
       <li><a href="fuehrerscheinklassen.html">Führerscheinklassen</a></li>
       <li><a href="theoriekurse.html">Theoriekurse</a></li>
-      <li><a href="pruefungstermine.html" class="active">Prüfungen</a></li>
+      <li><a href="pruefungstermine.html">Prüfungen</a></li>
       <li><a href="preise.html">Preise</a></li>
       <li><a href="anmeldung.html">Anmelden</a></li>
-      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="ueber-uns.html" class="active">Über uns</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
     </ul>
     <button type="button" class="nav__toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -200,42 +192,49 @@ m203 -163 c31 -16 56 -59 41 -72 -5 -4 -88 -20 -184 -35 -96 -15 -187 -30
 
 <header class="page-head">
   <div class="container">
-    <span class="section__label">Prüfungstermine</span>
-    <h1 style="font-size:2.5rem; text-transform:uppercase;">Theorie &amp; Praxis — feste Wochentage</h1>
-    <p>Beide Prüfungsarten finden an festen Wochentagen statt — das macht die Planung einfach.</p>
+    <span class="section__label">Über uns</span>
+    <h1 style="font-size:2.5rem; text-transform:uppercase;">Persönlich statt anonym</h1>
+    <p>Bei der Fahrschule Mayer sitzt keine anonyme Institution am anderen Ende — sondern ein fester Ansprechpartner vom ersten Kontakt bis zur bestandenen Prüfung.</p>
   </div>
 </header>
 
-<section class="section" style="border-bottom:none;">
+<section class="section">
   <div class="container">
-    <div class="exam__grid">
-      <div class="exam-card">
-        <h3>Theorieprüfung</h3>
-        <p>Jeden Montag beim TÜV, Walldorferstraße 3, 69168 Wiesloch. Gültigen Ausweis mitbringen.</p>
-        <ul><li><span>Gebühr</span><span>24,99 €</span></li></ul>
-      </div>
-      <div class="exam-card">
-        <h3>Praktische Prüfung</h3>
-        <p>Jeden Donnerstag (außer an Brückentagen).</p>
-        <ul>
-          <li><span>Klasse B</span><span>129,82 €</span></li>
-          <li><span>Klasse BE</span><span>129,83 €</span></li>
-          <li><span>Klasse A / A1 / A2</span><span>162,67 €</span></li>
+    <div class="about__grid">
+      <div class="about__portrait"><div class="about__monogram">SM</div></div>
+      <div>
+        <h2 style="font-size:1.6rem; margin-bottom:12px;">Stefan Mayer</h2>
+        <p>Inhaber der Fahrschule Mayer in Walldorf. Persönliche Betreuung vom ersten Kontakt bis
+        zur bestandenen Prüfung — auch auf Englisch möglich. Die Ausbildung deckt alle gängigen
+        Führerscheinklassen ab, von Moped bis Motorrad, vom Auto bis zum Anhänger.</p>
+        <ul class="fact-list">
+          <li><span>Standort</span><span>Walldorf</span></li>
+          <li><span>Sprachen</span><span>Deutsch, Englisch</span></li>
+          <li><span>Erreichbarkeit</span><span>Telefon &amp; E-Mail</span></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
+<section class="section">
+  <div class="container">
+    <span class="section__label">Auffrischungsstunden</span>
+    <h2 style="font-size:1.6rem; margin-bottom:12px;">Was tun, wenn die Praxis fehlt?</h2>
+    <p>Viele Menschen fühlen sich nach längerer Auszeit vom Fahren unsicher, wieder selbst ans
+    Steuer zu sitzen oder auf ein Motorrad zu steigen. Auch das Anhängerfahren kann eine Hürde
+    darstellen, wenn man es über einen längeren Zeitraum nicht praktiziert hat.</p>
+    <p>Dann helfen wir gerne mit Auffrischungsstunden weiter. Für Fragen und Informationen rund
+    um das Thema Auffrischungsstunden und eure individuelle Stundenplanung, <a href="kontakt.html" style="color:var(--color-primary);">kontaktiert uns hier</a>.</p>
+  </div>
+</section>
+
 <section class="section" style="border-bottom:none;">
   <div class="container">
-    <div class="cta-band">
-      <div>
-        <h2 style="font-size:1.6rem;">Fragen zur Prüfung?</h2>
-        <p style="margin:0;">Wir bereiten dich gezielt auf Theorie und Praxis vor.</p>
-      </div>
-      <a href="kontakt.html" class="btn btn-primary">Kontakt aufnehmen</a>
-    </div>
+    <span class="section__label">Education in English</span>
+    <h2 style="font-size:1.6rem; margin-bottom:12px;">We also teach in English</h2>
+    <p>We are also educating in English. For further information and individual planning, please
+    <a href="kontakt.html" style="color:var(--color-primary);">contact us here</a>.</p>
   </div>
 </section>
 
