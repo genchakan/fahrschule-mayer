@@ -92,6 +92,13 @@
   /* SECTION generic */
   .section { padding: 80px 0; border-bottom: 1px solid var(--color-border); }
   .section__head { margin-bottom: 40px; max-width: 640px; }
+
+  /* SPLIT GRID — metin + gerçek fotoğraf yan yana (Theoriekurse/Prüfungstermine önizlemeleri) */
+  .split-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+  .split-grid .section__head { margin-bottom: 20px; max-width: none; }
+  .split-grid__img { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--color-border); aspect-ratio: 4/3; }
+  .split-grid__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  @media (max-width: 900px) { .split-grid { grid-template-columns: 1fr; } .split-grid__img { order: -1; } }
   .section__label { font-family: monospace; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-secondary); margin-bottom: 12px; display: block; }
 
   /* LICENSE CLASSES — SECTION: Führerscheinklassen (Kennzeichen-Typografie statt Icon-Grid) */
@@ -280,24 +287,38 @@ m203 -163 c31 -16 56 -59 41 -72 -5 -4 -88 -20 -184 -35 -96 -15 -187 -30
 <!-- SECTION: Theorie-Intensivkurse -->
 <section class="section" id="kurse">
   <div class="container">
-    <div class="section__head">
-      <span class="section__label">Theorie-Intensivkurse 2026</span>
-      <h2>Seit 2025 nur noch als Intensivkurs</h2>
-      <p>Keine wöchentlichen Theoriestunden mehr — die komplette Ausbildung findet gebündelt in einem Kurs statt. Der nächste Kurs startet zu Ostern (30.03.2026).</p>
+    <div class="split-grid">
+      <div>
+        <div class="section__head">
+          <span class="section__label">Theorie-Intensivkurse 2026</span>
+          <h2>Seit 2025 nur noch als Intensivkurs</h2>
+          <p>Keine wöchentlichen Theoriestunden mehr — die komplette Ausbildung findet gebündelt in einem Kurs statt. Der nächste Kurs startet zu Ostern (30.03.2026).</p>
+        </div>
+        <p><a href="theoriekurse.html" style="color:var(--color-primary);">Alle 6 Kurstermine 2026 ansehen →</a></p>
+      </div>
+      <div class="split-grid__img">
+        <img src="assets/kurse-fahrstunde.jpg" alt="Fahrlehrerin bespricht mit einer Schülerin die Fahrstunde im Auto" loading="lazy">
+      </div>
     </div>
-    <p><a href="theoriekurse.html" style="color:var(--color-primary);">Alle 6 Kurstermine 2026 ansehen →</a></p>
   </div>
 </section>
 
 <!-- SECTION: Prüfungstermine -->
 <section class="section" id="pruefung">
   <div class="container">
-    <div class="section__head">
-      <span class="section__label">Prüfungstermine</span>
-      <h2>Theorie &amp; Praxis — feste Wochentage</h2>
-      <p>Theorieprüfung jeden Montag beim TÜV Wiesloch, praktische Prüfung jeden Donnerstag.</p>
+    <div class="split-grid">
+      <div>
+        <div class="section__head">
+          <span class="section__label">Prüfungstermine</span>
+          <h2>Theorie &amp; Praxis — feste Wochentage</h2>
+          <p>Theorieprüfung jeden Montag beim TÜV Wiesloch, praktische Prüfung jeden Donnerstag.</p>
+        </div>
+        <p><a href="pruefungstermine.html" style="color:var(--color-primary);">Alle Prüfungsgebühren ansehen →</a></p>
+      </div>
+      <div class="split-grid__img">
+        <img src="assets/pruefung-examiner.jpg" alt="Fahrprüfer füllt während der praktischen Prüfung den Bewertungsbogen aus" loading="lazy">
+      </div>
     </div>
-    <p><a href="pruefungstermine.html" style="color:var(--color-primary);">Alle Prüfungsgebühren ansehen →</a></p>
   </div>
 </section>
 
@@ -365,7 +386,11 @@ m203 -163 c31 -16 56 -59 41 -72 -5 -4 -88 -20 -184 -35 -96 -15 -187 -30
 </section>
 
 <!-- SECTION: Footer -->
-<p style="text-align:center; font-size:0.7rem; color:var(--color-muted); padding:16px 0 0;">Foto: "Teenager zeigt stolz seinen bestandenen Führerschein" von ccnull.de Bilddatenbank, <a href="https://creativecommons.org/licenses/by/2.0/" style="color:var(--color-muted);">CC BY 2.0</a></p>
+<p style="text-align:center; font-size:0.7rem; color:var(--color-muted); padding:16px 0 0;">
+  Fotos: "Teenager zeigt stolz seinen bestandenen Führerschein" von ccnull.de Bilddatenbank (<a href="https://creativecommons.org/licenses/by/2.0/" style="color:var(--color-muted);">CC BY 2.0</a>) ·
+  "Drive test" von OregonDOT (<a href="https://creativecommons.org/licenses/by/2.0/" style="color:var(--color-muted);">CC BY 2.0</a>) ·
+  "Examiner filling in driver's license road test form" (<a href="https://creativecommons.org/publicdomain/mark/1.0/" style="color:var(--color-muted);">Public Domain</a>)
+</p>
 
 <footer class="footer">
   <div class="container footer__inner">
